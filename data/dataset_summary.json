@@ -1,0 +1,6 @@
+{
+  "num_movies": 3631,
+  "num_clips": 34185,
+  "dataset_path": "../datasets/CondensedMovies",
+  "status": "metadata_ready"
+}

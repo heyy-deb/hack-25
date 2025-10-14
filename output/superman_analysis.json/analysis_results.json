@@ -1,0 +1,56 @@
+{
+  "video": "/Users/ddash/Desktop/hackathon/videoplayback.mp4",
+  "duration": 7300.76,
+  "total_segments": 161,
+  "ensemble_weights": {
+    "viral": 0.2,
+    "compelling": 0.8
+  },
+  "top_segments": [
+    {
+      "rank": 1,
+      "start_time": 5625.0,
+      "end_time": 5715.0,
+      "duration": 90.0,
+      "viral_score": 0.927824543194351,
+      "compelling_score": 0.9999734163284302,
+      "ensemble_score": 0.9855436417016143
+    },
+    {
+      "rank": 2,
+      "start_time": 2970.0,
+      "end_time": 3060.0,
+      "duration": 90.0,
+      "viral_score": 0.8029036541000174,
+      "compelling_score": 0.9999984502792358,
+      "ensemble_score": 0.9605794910433921
+    },
+    {
+      "rank": 3,
+      "start_time": 720.0,
+      "end_time": 810.0,
+      "duration": 90.0,
+      "viral_score": 0.7934088403700019,
+      "compelling_score": 0.9999992847442627,
+      "ensemble_score": 0.9586811958694106
+    },
+    {
+      "rank": 4,
+      "start_time": 6615.0,
+      "end_time": 6705.0,
+      "duration": 90.0,
+      "viral_score": 0.7735176335243996,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.95470352670488
+    },
+    {
+      "rank": 5,
+      "start_time": 6750.0,
+      "end_time": 6840.0,
+      "duration": 90.0,
+      "viral_score": 0.7696447492454666,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.9539289498490934
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "video": "../videoplayback.mp4",
+  "duration": 7300.76,
+  "total_segments": 161,
+  "ensemble_weights": {
+    "viral": 0.5,
+    "compelling": 0.5
+  },
+  "top_segments": [
+    {
+      "rank": 1,
+      "start_time": 3375.0,
+      "end_time": 3465.0,
+      "duration": 90.0,
+      "viral_score": 0.820225314880118,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.910112657440059
+    },
+    {
+      "rank": 2,
+      "start_time": 5940.0,
+      "end_time": 6030.0,
+      "duration": 90.0,
+      "viral_score": 0.8086970019972604,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.9043485009986302
+    },
+    {
+      "rank": 3,
+      "start_time": 6345.0,
+      "end_time": 6435.0,
+      "duration": 90.0,
+      "viral_score": 0.8063780274507495,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.9031890137253747
+    },
+    {
+      "rank": 4,
+      "start_time": 90.0,
+      "end_time": 180.0,
+      "duration": 90.0,
+      "viral_score": 0.8029942707947497,
+      "compelling_score": 0.9999998807907104,
+      "ensemble_score": 0.9014970757927301
+    },
+    {
+      "rank": 5,
+      "start_time": 4230.0,
+      "end_time": 4320.0,
+      "duration": 90.0,
+      "viral_score": 0.7993351369749894,
+      "compelling_score": 0.9999988079071045,
+      "ensemble_score": 0.8996669724410469
+    }
+  ]
+}

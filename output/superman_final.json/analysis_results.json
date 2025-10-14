@@ -1,0 +1,101 @@
+{
+  "video": "/Users/ddash/Desktop/hackathon/Superman 2025 1080p WEB-DL HEVC x265 5.1 BONE.mkv",
+  "duration": 7762.8384166666665,
+  "total_segments": 172,
+  "ensemble_weights": {
+    "viral": 0.1,
+    "compelling": 0.9
+  },
+  "top_segments": [
+    {
+      "rank": 1,
+      "start_time": 5175.0,
+      "end_time": 5265.0,
+      "duration": 90.0,
+      "viral_score": 0.8493597462717755,
+      "compelling_score": 0.9999984502792358,
+      "ensemble_score": 0.9849345798784899
+    },
+    {
+      "rank": 2,
+      "start_time": 360.0,
+      "end_time": 450.0,
+      "duration": 90.0,
+      "viral_score": 0.7916975965832493,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.979169759658325
+    },
+    {
+      "rank": 3,
+      "start_time": 7155.0,
+      "end_time": 7245.0,
+      "duration": 90.0,
+      "viral_score": 0.7558072820965187,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.9755807282096519
+    },
+    {
+      "rank": 4,
+      "start_time": 810.0,
+      "end_time": 900.0,
+      "duration": 90.0,
+      "viral_score": 0.7498378639555405,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.974983786395554
+    },
+    {
+      "rank": 5,
+      "start_time": 4500.0,
+      "end_time": 4590.0,
+      "duration": 90.0,
+      "viral_score": 0.7490842663302615,
+      "compelling_score": 0.9999984502792358,
+      "ensemble_score": 0.9749070318843384
+    },
+    {
+      "rank": 6,
+      "start_time": 3915.0,
+      "end_time": 4005.0,
+      "duration": 90.0,
+      "viral_score": 0.7488997449682133,
+      "compelling_score": 0.9999996423721313,
+      "ensemble_score": 0.9748896526317395
+    },
+    {
+      "rank": 7,
+      "start_time": 1665.0,
+      "end_time": 1755.0,
+      "duration": 90.0,
+      "viral_score": 0.7488190716150922,
+      "compelling_score": 0.9999997615814209,
+      "ensemble_score": 0.9748816925847881
+    },
+    {
+      "rank": 8,
+      "start_time": 4635.0,
+      "end_time": 4725.0,
+      "duration": 90.0,
+      "viral_score": 0.7315443135301525,
+      "compelling_score": 0.9999879598617554,
+      "ensemble_score": 0.9731435952285951
+    },
+    {
+      "rank": 9,
+      "start_time": 540.0,
+      "end_time": 630.0,
+      "duration": 90.0,
+      "viral_score": 0.7292980168353925,
+      "compelling_score": 0.9999996423721313,
+      "ensemble_score": 0.9729294798184575
+    },
+    {
+      "rank": 10,
+      "start_time": 2700.0,
+      "end_time": 2790.0,
+      "duration": 90.0,
+      "viral_score": 0.7189990160244827,
+      "compelling_score": 0.9999983310699463,
+      "ensemble_score": 0.9718983995654
+    }
+  ]
+}

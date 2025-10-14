@@ -1,0 +1,56 @@
+{
+  "video": "/Users/ddash/Desktop/hackathon/Superman 2025 1080p WEB-DL HEVC x265 5.1 BONE.mkv",
+  "duration": 7762.8384166666665,
+  "total_segments": 172,
+  "ensemble_weights": {
+    "viral": 0.2,
+    "compelling": 0.8
+  },
+  "top_segments": [
+    {
+      "rank": 1,
+      "start_time": 4950.0,
+      "end_time": 5040.0,
+      "duration": 90.0,
+      "viral_score": 0.936620797547923,
+      "compelling_score": 0.9999988079071045,
+      "ensemble_score": 0.9873232058352682
+    },
+    {
+      "rank": 2,
+      "start_time": 7380.0,
+      "end_time": 7470.0,
+      "duration": 90.0,
+      "viral_score": 0.9073288793618433,
+      "compelling_score": 1.0,
+      "ensemble_score": 0.9814657758723687
+    },
+    {
+      "rank": 3,
+      "start_time": 6210.0,
+      "end_time": 6300.0,
+      "duration": 90.0,
+      "viral_score": 0.8311961926225286,
+      "compelling_score": 0.9999903440475464,
+      "ensemble_score": 0.9662315137625429
+    },
+    {
+      "rank": 4,
+      "start_time": 3780.0,
+      "end_time": 3870.0,
+      "duration": 90.0,
+      "viral_score": 0.8141106949117816,
+      "compelling_score": 0.9999998807907104,
+      "ensemble_score": 0.9628220436149247
+    },
+    {
+      "rank": 5,
+      "start_time": 5535.0,
+      "end_time": 5625.0,
+      "duration": 90.0,
+      "viral_score": 0.8064271100696478,
+      "compelling_score": 0.9999985694885254,
+      "ensemble_score": 0.96128427760475
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "description": "Ensemble weights configuration for combining viral and compelling models",
+  "version": "1.0",
+  
+  "default": {
+    "viral_weight": 0.5,
+    "compelling_weight": 0.5,
+    "description": "Balanced approach - equal weight to viral and compelling"
+  },
+  
+  "presets": {
+    "social_media": {
+      "viral_weight": 0.7,
+      "compelling_weight": 0.3,
+      "description": "Optimized for Instagram/TikTok - prioritize viral potential",
+      "use_cases": ["Instagram Reels", "TikTok", "YouTube Shorts", "Memes"]
+    },
+    
+    "marketing": {
+      "viral_weight": 0.5,
+      "compelling_weight": 0.5,
+      "description": "Balanced for movie marketing - viral yet story-significant",
+      "use_cases": ["Movie trailers", "Promotional clips", "TV spots"]
+    },
+    
+    "story_focused": {
+      "viral_weight": 0.3,
+      "compelling_weight": 0.7,
+      "description": "Story-driven content - prioritize narrative significance",
+      "use_cases": ["Film festival trailers", "Art house promos", "Story highlights"]
+    },
+    
+    "pure_viral": {
+      "viral_weight": 1.0,
+      "compelling_weight": 0.0,
+      "description": "Maximum virality - use existing viral model only",
+      "use_cases": ["Quick viral content", "Reaction videos", "Clip compilations"]
+    },
+    
+    "pure_compelling": {
+      "viral_weight": 0.0,
+      "compelling_weight": 1.0,
+      "description": "Maximum story significance - professional curation style",
+      "use_cases": ["Movieclips-style highlights", "Educational content", "Analysis"]
+    }
+  },
+  
+  "genre_specific": {
+    "action": {
+      "viral_weight": 0.6,
+      "compelling_weight": 0.4,
+      "description": "Action movies - favor high-energy viral moments"
+    },
+    
+    "drama": {
+      "viral_weight": 0.3,
+      "compelling_weight": 0.7,
+      "description": "Drama - favor emotional and story-significant moments"
+    },
+    
+    "comedy": {
+      "viral_weight": 0.7,
+      "compelling_weight": 0.3,
+      "description": "Comedy - favor laugh-out-loud viral moments"
+    },
+    
+    "horror": {
+      "viral_weight": 0.5,
+      "compelling_weight": 0.5,
+      "description": "Horror - balance jump scares with story tension"
+    },
+    
+    "romance": {
+      "viral_weight": 0.4,
+      "compelling_weight": 0.6,
+      "description": "Romance - favor emotional story moments"
+    },
+    
+    "thriller": {
+      "viral_weight": 0.5,
+      "compelling_weight": 0.5,
+      "description": "Thriller - balance suspense with plot reveals"
+    },
+    
+    "scifi": {
+      "viral_weight": 0.6,
+      "compelling_weight": 0.4,
+      "description": "Sci-fi - favor visual spectacle and effects"
+    }
+  },
+  
+  "segmentation": {
+    "min_duration": 60,
+    "max_duration": 120,
+    "scene_detection_threshold": 27.0,
+    "top_n_clips": 5,
+    "overlap_threshold": 0.3,
+    "description": "Video segmentation parameters"
+  },
+  
+  "features": {
+    "num_frames": 16,
+    "feature_extraction_model": "MCG-NJU/videomae-base",
+    "batch_size": 8,
+    "use_gpu": true
+  },
+  
+  "output": {
+    "format": "mp4",
+    "codec": "libx264",
+    "audio_codec": "aac",
+    "save_features": false,
+    "save_analysis": true
+  },
+  
+  "tips": {
+    "increase_viral": "Increase viral_weight for more social media engagement",
+    "increase_compelling": "Increase compelling_weight for more story-driven content",
+    "balanced": "Use 0.5/0.5 when you want both qualities equally",
+    "experiment": "Try different presets and tune based on your audience feedback"
+  }
+}
