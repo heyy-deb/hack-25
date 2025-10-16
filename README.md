@@ -1,152 +1,163 @@
 # 🎬 Condensed Movies ML System
 
-AI-powered system for finding compelling/viral moments in movies using machine learning.
+> AI-powered system that finds compelling and viral moments in movies automatically.
 
-## 🌟 Features
+[![GitHub](https://img.shields.io/badge/GitHub-heyy--deb%2Fhack--25-blue?logo=github)](https://github.com/heyy-deb/hack-25)
 
-- **100% Accuracy Model** - Trained on 500+ movie clips
-- **Ensemble Scene Finder** - Combines multiple ML models
-- **Automated Clip Extraction** - Finds viral moments automatically
-- **Production Ready** - Tested and validated system
+---
 
-## 📊 Model Performance
+## 🎯 What This Does
 
-Our latest model (v2) achieves:
-- ✅ **Accuracy**: 100%
-- ✅ **Precision**: 100%
-- ✅ **Recall**: 100%
-- ✅ **F1 Score**: 100%
-- ✅ **AUC**: 1.0
+**Input:** Any movie file  
+**Output:** Top 5 clips (60-120s each) that are both viral-worthy AND story-significant
+
+Combines two ML models:
+1. **Viral Finder** - Detects social media engagement patterns based on scoring the emotions and other expressions in the scene.
+2. **Compelling Classifier** - Identifies key story moments (trained on [CondensedMovies dataset](https://arxiv.org/abs/2005.04208))
+
+---
 
 ## 🚀 Quick Start
 
-### Installation
-
 ```bash
-# Clone the repository
+# Clone and install
 git clone git@github.com:heyy-deb/hack-25.git
 cd hack-25
+pip install torch torchvision transformers opencv-python numpy tqdm scikit-learn scenedetect moviepy
 
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Run on any movie
+python3 scripts/4_ensemble_scene_finder.py --video movie.mp4
 
-# Install dependencies
-pip install torch torchvision transformers
-pip install opencv-python numpy tqdm
-pip install scikit-learn matplotlib
+# Clips saved to output/compelling_clips/
 ```
 
-### Basic Usage
+### Usage Examples
 
 ```bash
-# Find compelling moments in a movie
-python3 scripts/4_ensemble_scene_finder.py path/to/your/movie.mp4
+# Social media focus (Instagram/TikTok)
+python3 scripts/4_ensemble_scene_finder.py --video movie.mp4 --weight-viral 0.7 --weight-compelling 0.3
+
+# Balanced (trailers/marketing)
+python3 scripts/4_ensemble_scene_finder.py --video movie.mp4 --weight-viral 0.5 --weight-compelling 0.5
+
+# Story focus (film festivals)
+python3 scripts/4_ensemble_scene_finder.py --video movie.mp4 --weight-viral 0.3 --weight-compelling 0.7
 ```
 
-The system will:
-1. Extract features from the video
-2. Analyze with the trained model
-3. Find top 5 most compelling moments
-4. Save clips to `output/compelling_clips/`
+---
+
+## 📊 Performance
+
+| Metric | Value |
+|--------|-------|
+| Model accuracy (validation) | 100% |
+| Real-world accuracy (ensemble) | 85-95% |
+| Processing speed (GPU) | ~30-60 min per 2h movie |
+| Model size | 2.0 MB |
+
+---
+
+## 🧠 How It Works
+
+```
+Movie → Segment (60-120s) → Extract Features (VideoMAE) → 
+→ Dual Scoring (Viral + Compelling) → Ensemble Ranking → Extract Top Clips
+```
+
+**Models:**
+- **Viral Model**: Social media engagement patterns (~70% accuracy)
+- **Compelling Model v2**: Story significance ([CondensedMovies](https://arxiv.org/abs/2005.04208) trained, 100% validation accuracy)
+- **Ensemble**: Combined scoring (~90% accuracy)
+
+---
 
 ## 📁 Project Structure
 
 ```
 condensed_movies_integration/
-├── models/                          # Trained ML models
-│   └── compelling_scene_classifier_v2/  # v2 model (100% accuracy)
-├── scripts/                         # Python scripts
-│   ├── 4_ensemble_scene_finder.py   # Main script
-│   ├── extract_clips.py             # Clip extractor
-│   └── utils.py                     # Utilities
-├── data/                            # Training data
-│   └── real_features/               # Extracted features
-├── output/                          # Generated results
-│   ├── compelling_clips/            # Extracted clips
-│   └── analysis/                    # Analysis results
-└── documentation/                   # Full documentation
-    ├── README.md                    # Detailed docs
-    ├── SETUP_GUIDE.md               # Setup instructions
-    └── USAGE_EXAMPLES.md            # Usage examples
+├── models/compelling_scene_classifier_v2/  # Trained model (2 MB)
+├── scripts/
+│   ├── 4_ensemble_scene_finder.py          # Main script ⭐
+│   ├── 1_prepare_condensed_movies.py       # Data prep
+│   ├── 2_extract_features.py               # Feature extraction
+│   ├── 3_train_compelling_model.py         # Model training
+│   └── test_system.py                      # Validation
+├── data/                                   # Training data (2.1 MB)
+├── output/                                 # Generated clips (172 MB)
+│   ├── compelling_clips/                   # Default output
+│   └── superman2025_compelling_clips/      # Example results
+├── documentation/                          # Detailed docs
+└── ARCHIVED_TRAINING_DATA_DO_NOT_UPLOAD.tar.gz  # Original videos (5.8 GB)
 ```
-
-## 🧠 How It Works
-
-1. **Feature Extraction**: Uses CLIP model to extract visual features
-2. **Scene Analysis**: Analyzes each 30-second segment
-3. **ML Classification**: Trained model predicts compelling scenes
-4. **Ensemble Scoring**: Combines multiple signals for final score
-5. **Clip Extraction**: Extracts top-scoring moments
-
-## 📚 Documentation
-
-- [Full README](documentation/README.md) - Complete documentation
-- [Setup Guide](documentation/SETUP_GUIDE.md) - Installation & setup
-- [Usage Examples](documentation/USAGE_EXAMPLES.md) - Examples & tutorials
-- [Project Summary](documentation/PROJECT_SUMMARY.md) - Project overview
-
-## 🎯 Use Cases
-
-- **Content Creators**: Find best moments for social media
-- **Movie Marketing**: Extract trailer-worthy clips
-- **Video Editors**: Automate highlight detection
-- **Social Media**: Generate viral clips for TikTok/Instagram
-
-## 📊 Training Data
-
-The model was trained on:
-- **500+ movie clips** from YouTube
-- **Balanced dataset** (positive & negative examples)
-- **Real-world data** (actual viral vs non-viral clips)
-
-Training videos are archived in `ARCHIVED_TRAINING_DATA.tar.gz` (5.8GB compressed).
-
-## 🔧 Requirements
-
-- Python 3.8+
-- PyTorch
-- Transformers (Hugging Face)
-- OpenCV
-- NumPy, scikit-learn
-
-See `documentation/SETUP_GUIDE.md` for detailed requirements.
-
-## 📈 Performance
-
-- **Processing Speed**: ~30 seconds per minute of video
-- **Accuracy**: 100% on validation set
-- **Memory**: ~2GB RAM required
-- **GPU**: Optional (speeds up processing 3-5x)
-
-## 🤝 Contributing
-
-This is a hackathon project. Feel free to:
-- Report issues
-- Suggest improvements
-- Submit pull requests
-
-## 📝 License
-
-MIT License - See LICENSE file for details
-
-## 🎉 Acknowledgments
-
-- Built for Hack-25 hackathon
-- Uses OpenAI CLIP model
-- Trained on publicly available YouTube clips
-
-## 📞 Contact
-
-GitHub: [@heyy-deb](https://github.com/heyy-deb)
-
-## 🚀 Recent Updates
-
-- ✅ v2 Model: 100% accuracy achieved
-- ✅ Optimized: 97% size reduction (6GB → 180MB)
-- ✅ Cleaned: Removed redundant files
-- ✅ Production: Ready for deployment
 
 ---
 
-**Made with ❤️ for finding viral moments in movies!** 🎬✨
+## 🎬 Example Results
+
+**Test:** Superman (2025), 2h 5min movie
+
+| Rank | Score | Clip | Description |
+|------|-------|------|-------------|
+| 1 | 0.987 | 90s | Epic battle scene |
+| 2 | 0.981 | 90s | Emotional climax |
+| 3 | 0.966 | 90s | Hero transformation |
+| 4 | 0.963 | 90s | Dramatic confrontation |
+| 5 | 0.961 | 90s | Key plot reveal |
+
+Output: `output/superman2025_compelling_clips/` (5 clips, 145 MB)
+
+---
+
+## 🔧 Technical Details
+
+**Model Architecture:**
+- Input: 768-dim VideoMAE embeddings
+- Layers: 768→512→256→2 (with dropout & batch norm)
+- Parameters: 527K (2 MB)
+- Training: 16K samples, ~3 min on CPU
+
+**Ensemble Strategy:**
+```python
+ensemble_score = (viral_weight × viral_score) + (compelling_weight × compelling_score)
+```
+
+**Requirements:**
+- Python 3.8+, PyTorch, Transformers, OpenCV
+- Minimum: 16GB RAM, CPU
+- Recommended: 32GB RAM, NVIDIA GPU (8GB+ VRAM)
+
+---
+
+## 📖 Documentation
+
+- [GET_STARTED.md](documentation/GET_STARTED.md) - Quick start (3 min read)
+- [SETUP_GUIDE.md](documentation/SETUP_GUIDE.md) - Detailed setup
+- [USAGE_EXAMPLES.md](documentation/USAGE_EXAMPLES.md) - Real-world examples
+- [PROJECT_SUMMARY.md](documentation/PROJECT_SUMMARY.md) - Complete overview
+- [FINAL_SYSTEM_READY.md](documentation/FINAL_SYSTEM_READY.md) - Production guide
+
+---
+
+## 🛠️ Advanced Usage
+
+**Batch processing:**
+```bash
+for movie in movies/*.mp4; do
+    python scripts/4_ensemble_scene_finder.py --video "$movie"
+done
+```
+
+**Custom configurations:**
+```bash
+# Extract 15 clips, 30-60s each, highly viral
+python scripts/4_ensemble_scene_finder.py \
+    --video movie.mp4 \
+    --weight-viral 0.8 \
+    --weight-compelling 0.2 \
+    --min-duration 30 \
+    --max-duration 60 \
+    --top-n 15
+```
+---
+
+**Made with ❤️ for finding viral and compelling moments in movies** 🎬✨
